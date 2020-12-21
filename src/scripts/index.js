@@ -5,9 +5,8 @@ window.addEventListener('load', function () {
 
             document.querySelector('main').style.display = 'block';
             document.getElementById('userName').innerHTML = loggedInUser.displayName
-            document.getElementById('userId').innerHTML = loggedInUser.uid;
+            //document.getElementById('userId').innerHTML = loggedInUser.uid;
             document.getElementById('userProfilePicture').src = loggedInUser.photoURL;
-            document.getElementById('userProfilePicture').style.borderRadius = "25px";
 
         } else firebase.auth().signInWithPopup(provider)
     });

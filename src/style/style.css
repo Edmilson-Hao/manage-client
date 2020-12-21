@@ -1,17 +1,55 @@
 *, body {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Fira Code', monospace;
 }
 
-main {
+main, header, footer {
     position: absolute;
-    display: flex;
-    flex-direction: row;
+    background-color: lightblue;
+    width: 90vw;
+    min-width: 426px;
+    left: 5vw;
 }
 
-main > main div {
-    flex: auto;
-    color: white;
-    background-color: black;
+main {
+    margin-left: 10vw;
+    margin: auto;
+    position: absolute;
+}
+
+#userProfilePicture {
+    border-radius: 25px;
+    width: 56px;
+    margin: 1vh 1vw;
+    margin-left: 5vw;
+}
+
+#userData {
+    position: absolute;
+    float: right;
+    margin-top: 2vh;
+    top: 0;
+    left: 15vw;
+    font-size: 1em;
+}
+
+a{
+    width: 30vw;
+    height: 30vw;
+    line-height: 30vw;
+    text-align: center;
+    border: 1px solid black;
+    position: relative;
+}
+
+#seeAllContacts {
+    float: left;
+    left: 15vw;
+}
+
+#addNewContact {
+    float: right;
+    right: 15vw;
 }
