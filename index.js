@@ -1,8 +1,4 @@
-logInWithGoogle = () => {
-    firebase.auth().signInWithPopup(provider)
-    return user
-}
-
-showUser = () => {
-    console.log(user)
-}
+firebase.auth().onAuthStateChanged(function (user){
+    if(user) console.log(user)
+    else console.log(`Not Logged In: ${user}`)
+});

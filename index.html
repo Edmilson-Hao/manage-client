@@ -5,26 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Client</title>
 
-    
-
-    
 </head>
 <body>
-
-    <h1>
-
-    </h1>
-
-    <button id='checkLogInStateButton' onclick='showUser()'>
-        Estou logado?
-    </button>
-
-    <button id='googleLogInButton' onclick='logInWithGoogle()'>
-        Entrar
-    </button>
-
-
-
 
 <!-- Firebase Scripts
 -------------------------------------------------------------------------------------->
@@ -32,35 +14,9 @@
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyBiQ3FkNczCJZ93rAddnc8OdvpCIUgwXlE",
-    authDomain: "manage-client-82ae6.firebaseapp.com",
-    projectId: "manage-client-82ae6",
-    storageBucket: "manage-client-82ae6.appspot.com",
-    messagingSenderId: "476064623422",
-    appId: "1:476064623422:web:a988e0ec9b80800d05da6f",
-    measurementId: "G-TKTNE4LDGJ"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  let provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().onAuthStateChange(function(user) {
-      if(user){
-          console.log(user);
-      } else {
-        firebase.auth().signInWithRedirect(provider);
-      }
-  });
-</script>
+<script src="./firebase.js"></script>
 <script src="./index.js"></script>
 </body>
 </html>
