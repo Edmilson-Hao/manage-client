@@ -3,3 +3,15 @@
     margin: 0;
     font-family: 'Fira Code', monospace;
 }
+
+main {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+main > main div {
+    flex: auto;
+    color: white;
+    background-color: black;
+}
