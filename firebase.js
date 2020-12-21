@@ -8,6 +8,7 @@ var firebaseConfig = {
     messagingSenderId: "476064623422",
     appId: "1:476064623422:web:a988e0ec9b80800d05da6f",
     measurementId: "G-TKTNE4LDGJ"
-};
+}
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig)
+var provider = new firebase.auth.GoogleAuthProvider()
