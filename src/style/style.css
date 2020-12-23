@@ -1,55 +1,65 @@
-*, body {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Fira Code', monospace;
 }
 
-main, header, footer {
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:-webkit-scrollbar {
+    display: none;
+}
+  
+::-webkit-scrollbar-button {
+    display: none;
+}
+  
+body {
+    -ms-overflow-style:none;
+}
+
+header {
     position: absolute;
-    background-color: lightblue;
-    width: 90vw;
-    min-width: 426px;
-    left: 5vw;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 20vh;
+    background-color: #ccc;
 }
 
 main {
-    margin-left: 10vw;
-    margin: auto;
     position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 80vh;
+    top: 15vh;
+    border-radius: 25px 25px 0 0;
+    background-color: #002f48;
 }
 
-#userProfilePicture {
-    border-radius: 25px;
-    width: 56px;
-    margin: 1vh 1vw;
-    margin-left: 5vw;
-}
-
-#userData {
+section {
     position: absolute;
-    float: right;
-    margin-top: 2vh;
-    top: 0;
-    left: 15vw;
-    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 55vh;
+    top: 40vh;
+    border-radius: 25px 25px 0 0;
+    background-color: #ccc;
 }
 
-a{
-    width: 30vw;
-    height: 30vw;
-    line-height: 30vw;
-    text-align: center;
-    border: 1px solid black;
-    position: relative;
-}
-
-#seeAllContacts {
-    float: left;
-    left: 15vw;
-}
-
-#addNewContact {
-    float: right;
-    right: 15vw;
+footer {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 10vh;
+    top: 90vh;
+    border-radius: 25px 25px 0 0;
+    background-color: #002f48;
 }

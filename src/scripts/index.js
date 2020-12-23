@@ -1,3 +1,5 @@
+/*
+
 window.addEventListener('load', function () {
     firebase.auth().onAuthStateChanged(function (user){
         if (user){
@@ -13,7 +15,6 @@ window.addEventListener('load', function () {
 })
 
 
-/*
 logOut = () => {
     firebase.auth().signOut()
 }
@@ -37,4 +38,5 @@ if(user) {
     console.log(`Not Logged In: ${user}`)
     
 }
+
 */
