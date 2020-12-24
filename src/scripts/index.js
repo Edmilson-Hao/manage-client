@@ -1,3 +1,4 @@
+let loggedInUser = firebase.auth().currentUser;
 /*
 
 

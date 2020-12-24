@@ -1,6 +1,18 @@
+@media screen and (min-width: 600px){
+    .align-btn {
+        display: block;
+        position: absolute;
+        margin: 0;
+        width: 20vw;
+        top: 55vh;
+        left: 15vw;
+    }
+}
 .align-btn {
     display: block;
-    position: relative;
-    left: 16vw;
-    top: 5vh;
+    position: absolute;
+    margin: 0;
+    width: 50vw;
+    top: 45vh;
+    left: 25vw;
 }

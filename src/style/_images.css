@@ -1,7 +1,14 @@
+@media screen and (min-width: 600px){
+    .not-a-user-icon {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
 .not-a-user-icon { 
     position: relative;
     display: block;
-    width: 15vw;
-    height: 15vw;
+    width: 35vw;
+    height: 35vw;
     margin: auto;
 }
