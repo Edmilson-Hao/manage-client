@@ -2,6 +2,8 @@
 @import './src/style/_text.css';
 @import './src/style/_images.css';
 @import './src/style/_button.css';
+@import './src/style/_footer.css';
+@import './src/style/_loading.css';
 @import 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css';
 
 * {
@@ -18,4 +20,10 @@
   
 ::-webkit-scrollbar-button {
     display: none;
+}
+
+:root {
+    --main-color: #FFFFFF;
+    --secondary-color: #002f48;
+    --third-color: #F77F3C;
 }

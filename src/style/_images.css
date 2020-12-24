@@ -1,7 +1,7 @@
 @media screen and (min-width: 600px){
     .not-a-user-icon {
-        width: 15vw;
-        height: 15vw;
+        max-width: 15vw;
+        max-height: 15vw;
     }
 }
 

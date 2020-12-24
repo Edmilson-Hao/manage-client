@@ -1,11 +1,4 @@
-@media screen and (min-width: 600px){
-    header, main, section, footer {
-        max-width: 50vw;
-        left: 25vw;
-    }
-}
-
-header, main, section, footer {
+header, main, section, my-footer {
     position: absolute;
     margin: 0;
     padding: 0;
@@ -14,25 +7,25 @@ header, main, section, footer {
 }
 
 header {
-    height: 20vh;
-    background-color: #fff;
+    height: 15vh;
+    background-color: var(--main-color);
     border-radius: 0;
 }
 
 main {
-    height: 85vh;
-    top: 15vh;
-    background-color: #002f48;
+    height: 90vh;
+    top: 10vh;
+    background-color: var(--secondary-color);
 }
 
 section {
-    height: 55vh;
+    height: 60vh;
     top: 40vh;
-    background-color: #fff;
+    background-color: var(--main-color);
 }
 
-footer {
+my-footer {
     height: 10vh;
     top: 90vh;
-    background-color: #002f48;
+    background-color: var(--secondary-color);
 }

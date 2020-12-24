@@ -7,15 +7,22 @@ p {
 }
 
 .line-heigh-20vh {
-    line-height: 20vh;
+    line-height: 15vh;
     padding-left: 5vw;
 }
 
 header h1 {
-    color: #002f48;
+    font-size: 2em;
+    color: var(--secondary-color);
+    display: inline;
+}
+
+header h1 span{
+    font-size: 2em;
+    color: var(--secondary-color);
 }
 
 main p{
-    color: #f77d3c;
+    color: var(--third-color);
     padding: 5vh;
 }
