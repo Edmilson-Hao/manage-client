@@ -1,0 +1,21 @@
+h1 {
+    font-size: 3.14em;
+}
+
+p {
+    font-size: 1em;
+}
+
+.line-heigh-20vh {
+    line-height: 20vh;
+    padding-left: 5vw;
+}
+
+header h1 {
+    color: #002f48;
+}
+
+main p{
+    color: #f77d3c;
+    padding: 5vh;
+}

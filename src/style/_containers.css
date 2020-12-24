@@ -1,0 +1,38 @@
+@media screen {
+    header, main, section, footer {
+        max-width: 50vw;
+        left: 25vw;
+    }
+}
+
+header, main, section, footer {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    border-radius: 25px 25px 0 0;
+}
+
+header {
+    height: 20vh;
+    background-color: #fff;
+    border-radius: 0;
+}
+
+main {
+    height: 80vh;
+    top: 15vh;
+    background-color: #002f48;
+}
+
+section {
+    height: 55vh;
+    top: 40vh;
+    background-color: #fff;
+}
+
+footer {
+    height: 10vh;
+    top: 90vh;
+    background-color: #002f48;
+}
