@@ -13,6 +13,8 @@
 
 </head>
 <body>
+
+    
 <!-- Firebase Scripts
 -------------------------------------------------------------------------------------->
 
@@ -22,13 +24,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
 
 <script src="./src/scripts/firebase.js"></script>
-<script src="./src/scripts/index.js"></script>
-
-<script>
-    firebase.auth().onAuthStateChanged(function (user){
-        if (user) window.location.href = './src/Routes/home.html';
-        else window.location.href = './src/Routes/login.html';
-    });
-</script>
+<script src="./index.js"></script>
 </body>
 </html>

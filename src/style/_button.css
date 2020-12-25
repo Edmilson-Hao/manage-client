@@ -1,13 +1,3 @@
-@media screen and (min-width: 700px){
-    .align-btn {
-        top: 70vh;
-    }
-}
-.align-btn {
-    display: block;
-    position: absolute;
-    margin: 0;
-    width: 50vw;
-    top: 45vh;
-    left: 25vw;
+.roundBtn {
+    
 }
