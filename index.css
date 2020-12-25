@@ -25,3 +25,9 @@
     --secondary-color: #002f48;
     --third-color: #F77F3C;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}

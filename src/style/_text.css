@@ -1,6 +1,9 @@
 h1 {
     font-size: 3.14em;
 }
+.page-title {
+    color: white;
+}
 
 p {
     font-size: 1em;

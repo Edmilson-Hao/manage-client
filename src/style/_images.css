@@ -1,14 +1,18 @@
-@media screen and (min-width: 600px){
-    .not-a-user-icon {
-        max-width: 15vw;
-        max-height: 15vw;
-    }
-}
-
-.not-a-user-icon { 
+.not-a-user-icon {
     position: relative;
     display: block;
-    width: 35vw;
-    height: 35vw;
+    width: 10vw;
+    height: 10vw;
     margin: auto;
+    top: 25vh;
+}
+
+.icon-logo {
+    position: relative;
+    display: block;
+    margin: auto;
+    padding: 0;
+    width: 30vh;
+    height: 30vh;
+    top: 51vh;
 }
