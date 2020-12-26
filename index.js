@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
     const appContainer = document.querySelector('app')
     const appLogoImage = document.querySelector('.icon-logo')
-    const notAUserImage = document.querySelector('.not-a-user-icon')
+    const loginButton = document.querySelector('#loginButton')
 
     if (screen.width > screen.height) {
         appContainer.style.width = '75vh'
@@ -11,13 +11,12 @@ window.addEventListener('load', function () {
         appContainer.style.height = '92.5vh'
 
         appLogoImage.style.position = 'absolute'
-        appLogoImage.style.top = '60vh'
-        appLogoImage.style.left = '20vw'
+        appLogoImage.style.top = '30vh'
+        appLogoImage.style.left = '22vw'
 
-        notAUserImage.style.width = '30vw'
-        notAUserImage.style.height = '30vw'
-        notAUserImage.style.left = '35vw'
-        notAUserImage.style.position = 'absolute'
+        loginButton.style.top = '60vh'
+
+        document.querySelector('app').style.border = 'none'
     }
 })
 

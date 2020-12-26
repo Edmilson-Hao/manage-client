@@ -1,3 +1,10 @@
-.roundBtn {
-    
+#loginButton {
+    color: var(--third-color);
+    background-color: var(--secondary-color);
+    border: 1px solid var(--third-color);
+
+    display: block;
+    position: relative;
+    margin: auto;
+    top: 45vh;
 }
