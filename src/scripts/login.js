@@ -1,12 +1,13 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+        document.querySelector('#loadingDiv').style.display = 'block'
         window.location.href = '../../index.html'
-        document.querySelector('loadingIcon').style.display = 'block'
     }
 });
 
 const loginButton = document.querySelector('#loginButton')
 
 loginButton.addEventListener('click', function () {
+    document.querySelector('#loadingDiv').style.display = 'block'
     firebase.auth().signInWithRedirect(provider)
 })

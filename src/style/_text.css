@@ -39,3 +39,7 @@ main p{
     color: var(--third-color);
     padding: 5vh;
 }
+
+footer label {
+    line-height: 0vh;
+}

@@ -8,3 +8,7 @@
     margin: auto;
     top: 45vh;
 }
+
+.radioButtons {
+    display: none;
+}

@@ -1,7 +1,14 @@
 window.addEventListener('load', function () {
+    /*Responsividade da página
+    ------------------------------------------------------------------------------------------- */
     const appContainer = document.querySelector('app')
     const appLogoImage = document.querySelector('.icon-logo')
     const loginButton = document.querySelector('#loginButton')
+    
+    if (document.title === 'Entrar') {
+        const loadingDiv = document.querySelector('#loadingDiv')
+        loadingDiv.style.display = 'none'
+    }
 
     if (screen.width > screen.height) {
         appContainer.style.width = '75vh'
@@ -20,8 +27,6 @@ window.addEventListener('load', function () {
     }
 })
 
-/*
 firebase.auth().onAuthStateChanged(function(user) {
-    if (!user) window.location.href = './login.html';
+    if (!user && document.title !== 'Entrar') window.location.href = './login.html';
 })
-*/

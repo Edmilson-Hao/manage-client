@@ -3,4 +3,4 @@ class App extends HTMLElement {
         super();        
     }
 }
-window.customElements.define('app', App);
+window.customElements.define('app', App)
