@@ -2,9 +2,10 @@ window.addEventListener('load', function () {
     /*Responsividade da página
     ------------------------------------------------------------------------------------------- */
     const appContainer = document.querySelector('app')
-    const appLogoImage = document.querySelector('.icon-logo')
+    //const appLogoImage = document.querySelector('.icon-logo')
     const loginButton = document.querySelector('#loginButton')
-    
+    const footerDivs = document.querySelectorAll('.footerDivs')
+    var incremento = 0;
     if (document.title === 'Entrar') {
         const loadingDiv = document.querySelector('#loadingDiv')
         loadingDiv.style.display = 'none'
@@ -13,15 +14,22 @@ window.addEventListener('load', function () {
     if (screen.width > screen.height) {
         appContainer.style.width = '75vh'
         appContainer.style.height = '100vh'
+
+        for (const i in footerDivs) {
+            footerDivs[i].style.left = `${0+incremento}vh`
+            incremento -= 15
+        }
+
     } else if (screen.width < screen.height) {
         appContainer.style.width = '100vw'
-        appContainer.style.height = '92.5vh'
-
-        appLogoImage.style.position = 'absolute'
-        appLogoImage.style.top = '30vh'
-        appLogoImage.style.left = '22vw'
-
-        loginButton.style.top = '60vh'
+        appContainer.style.height = '100vh'
+        
+        for (const i in footerDivs) {
+            footerDivs[i].style.width = '45vh'
+            footerDivs[i].style.height = '70vh'
+            footerDivs[i].style.left = `${0+incremento}vh`
+            incremento -= 9
+        }
 
         document.querySelector('app').style.border = 'none'
     }

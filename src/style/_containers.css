@@ -29,11 +29,10 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 10vh;
-    top: 78vh;
+    height: 12vh;
+    top: 80vh;
     width: 100%;
     background-color: var(--secondary-color);
-    border: 1px solid white;
     margin: 0;
     padding: 0 3vh;
 }
@@ -41,6 +40,7 @@ footer {
 app {
     position: absolute;
     display: block;
+    height: 100vh;
     margin: auto;
     border: 1px solid var(--third-color);
     background-color: var(--secondary-color);
@@ -52,4 +52,19 @@ app {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     top: 0vh;
+}
+
+footer div {
+    position: relative;
+    display: none;
+    margin: auto;
+    background-color: black;
+    width: 69vh;
+    border: 1px solid white;
+    height: 70vh;
+    top: -85vh;
+}
+
+input:checked + label div {
+    display: block;
 }

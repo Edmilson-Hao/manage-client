@@ -17,31 +17,61 @@
 <app>
     <button onclick="firebase.auth().signOut()">Sair</button>
 
+
+    <!-- footer
+    --------------------------------------------------------------------------------------------------------->
     <footer>
         <input class='radioButtons' type="radio" name="footer-menu" id="addContactRadio">
         <label for="addContactRadio">
             <img src="./src/assets/add.png" alt="add new contact">
+            
+            <div class='footerDivs' id='addContactDiv'>
+                Add contact
+            </div>
+
         </label>
 
         <input class='radioButtons' type="radio" name="footer-menu" id="searchContactRadio">
         <label for="searchContactRadio">
             <img src="./src/assets/search.png" alt="add new contact">
+            
+            <div class='footerDivs' id='searchContactDiv'>
+                search contact
+            </div>
+
+        </label>
+
+        <input class='radioButtons' type="radio" name="footer-menu" id="appHomeRadio" checked="checked" >
+        <label for="appHomeRadio">
+            <img src="./src/assets/home.png" alt="add new contact">
+            
+            <div class='footerDivs' id='appHomeDiv'>
+                home
+            </div>
+
+        </label>
+        
+        <input class='radioButtons' type="radio" name="footer-menu" id="listContactRadio">
+        <label for="listContactRadio">
+            <img src="./src/assets/lists.png" alt="add new contact">
+            
+            <div class='footerDivs' id='listContactDiv'>
+                list contact
+            </div>
+
         </label>
 
         <input class='radioButtons' type="radio" name="footer-menu" id="myProfileRadio">
         <label for="myProfileRadio">
             <img src="./src/assets/user.png" alt="add new contact">
-        </label>
 
-        <input class='radioButtons' type="radio" name="footer-menu" id="listContactRadio">
-        <label for="listContactRadio">
-            <img src="./src/assets/lists.png" alt="add new contact">
-        </label>
+            
+            <div class='footerDivs' id='myProfileDiv'>
+                my profile
+            </div>
 
-        <input class='radioButtons' type="radio" name="footer-menu" id="appHomeRadio">
-        <label for="appHomeRadio">
-            <img src="./src/assets/home.png" alt="add new contact">
         </label>
+        
     </footer>
 </app>
 
