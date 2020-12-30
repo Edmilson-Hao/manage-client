@@ -22,17 +22,58 @@
     --------------------------------------------------------------------------------------------------------->
     <footer>
         <input class='radioButtons' type="radio" name="footer-menu" id="addContactRadio">
-        <label for="addContactRadio">
+        <label class='radioButtonLabel' for="addContactRadio">
             <img src="./src/assets/add.png" alt="add new contact">
             
             <div class='footerDivs' id='addContactDiv'>
-                Add contact
+                <form>
+                    <Label class="labelAddClient" for="tipoPessoa">Tipo de Pessoa:</Label>
+                    <select class="selectAddClient" name="tipoPessoa" id="tipoPessoa">
+                        <option value="">Selecione</option>
+                        <option value="pessoaFisica">Pessoa Física</option>
+                        <option value="pessoaJuridica">Pessoa Jurídica</option>
+                    </select>
+
+
+                    <Label class="labelAddClient" for="nomeCliente">Nome:</Label>
+                    <input type="text" id='nomeCliente' name='nomeCliente' placeholder='Nome'>
+
+                    <label class="labelAddClient" for="emailCliente">E-mail:</label>
+                    <input type="email" id='emailCliente' name='emailCliente' placeholder='E-mail'>
+
+                    <label class="labelAddClient" for="telefoneClient">Telefone</label>
+                    <input type="tel" id='telefoneClient' name='telefoneClient' placeholder='Formato -> DDD900000000'>
+
+                    <label class="labelAddClient" for="origemCliente">Origem do Cliente: </label>
+                    <select class="selectAddClient" name="origemCliente" id="origemCliente">
+                        <option value="">Selecione</option>
+                        <option value="sistemThapymar">Sistema Thapymar</option>
+                        <option value="Wally">Wally</option>
+                        <option value="captacaoPropria">Captação Própria</option>
+                    </select>
+
+                    <label class="labelAddClient" for="andamentoCliente">Andamento: </label>
+                    <select class="selectAddClient" name="origemCliente" id="situacaoCliente">
+                        <option value="">Selecione</option>
+                        <option value="clienteNovo">Cliente Novo</option>
+                        <option value="emNegociacao">Em Negociação</option>
+                        <option value="clientePerdido">Cliente Perdido</option>
+                        <option value="semContato">Sem Contato</option>
+                        <option value="vendaConcretizada">Venda Concretizada</option>
+                        <option value="vendaPerdida">Venda Perdida</option>
+                    </select>
+
+                    <label class="labelAddClient" for="observacao">Observação</label>
+                    <input type="text" name="observacao" id="observacao">
+
+                    <button id='formButton'>Salvar</button>
+                </form>
             </div>
 
         </label>
 
         <input class='radioButtons' type="radio" name="footer-menu" id="searchContactRadio">
-        <label for="searchContactRadio">
+        <label class='radioButtonLabel' for="searchContactRadio">
             <img src="./src/assets/search.png" alt="add new contact">
             
             <div class='footerDivs' id='searchContactDiv'>
@@ -42,7 +83,7 @@
         </label>
 
         <input class='radioButtons' type="radio" name="footer-menu" id="appHomeRadio" checked="checked" >
-        <label for="appHomeRadio">
+        <label class='radioButtonLabel' for="appHomeRadio">
             <img src="./src/assets/home.png" alt="add new contact">
             
             <div class='footerDivs' id='appHomeDiv'>
@@ -52,7 +93,7 @@
         </label>
         
         <input class='radioButtons' type="radio" name="footer-menu" id="listContactRadio">
-        <label for="listContactRadio">
+        <label class='radioButtonLabel' for="listContactRadio">
             <img src="./src/assets/lists.png" alt="add new contact">
             
             <div class='footerDivs' id='listContactDiv'>
@@ -62,7 +103,7 @@
         </label>
 
         <input class='radioButtons' type="radio" name="footer-menu" id="myProfileRadio">
-        <label for="myProfileRadio">
+        <label class='radioButtonLabel' for="myProfileRadio">
             <img src="./src/assets/user.png" alt="add new contact">
 
             
@@ -83,6 +124,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
 
 <script src="./src/scripts/firebase.js"></script>
 <script src="./index.js"></script>

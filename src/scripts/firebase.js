@@ -12,3 +12,5 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
 var provider = new firebase.auth.GoogleAuthProvider()
+
+var db = firebase.firestore();

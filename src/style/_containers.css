@@ -58,13 +58,19 @@ footer div {
     position: relative;
     display: none;
     margin: auto;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.2);
     width: 69vh;
-    border: 1px solid white;
     height: 70vh;
     top: -85vh;
+    border-radius: 15px;
+    padding: 5px;
+    overflow: hidden scroll;
 }
 
 input:checked + label div {
     display: block;
+}
+
+form {
+    padding: 1em;
 }

@@ -1,10 +1,11 @@
+
+const footerDivs = document.querySelectorAll('.footerDivs')
+const formButton = document.querySelector('#formButton')
+
 window.addEventListener('load', function () {
     /*Responsividade da página
     ------------------------------------------------------------------------------------------- */
     const appContainer = document.querySelector('app')
-    //const appLogoImage = document.querySelector('.icon-logo')
-    const loginButton = document.querySelector('#loginButton')
-    const footerDivs = document.querySelectorAll('.footerDivs')
     var incremento = 0;
     if (document.title === 'Entrar') {
         const loadingDiv = document.querySelector('#loadingDiv')
@@ -38,3 +39,15 @@ window.addEventListener('load', function () {
 firebase.auth().onAuthStateChanged(function(user) {
     if (!user && document.title !== 'Entrar') window.location.href = './login.html';
 })
+
+var contato = {
+    nome: 'alow'
+}
+formButton.onclick = ev => {
+    contato.nome = toString(document.querySelector('#nomeCliente'))
+    
+    db.collection("users").add({
+        first: firebase.auth().currentUser.displayName
+    })
+    ev.preventDefault()
+}
