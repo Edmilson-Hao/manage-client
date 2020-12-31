@@ -1,4 +1,3 @@
-
 const footerDivs = document.querySelectorAll('.footerDivs')
 const formButton = document.querySelector('#formButton')
 
@@ -40,14 +39,26 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (!user && document.title !== 'Entrar') window.location.href = './login.html';
 })
 
-var contato = {
-    nome: 'alow'
-}
+tipoPessoa = document.querySelector('#tipoPessoa').value
+nomeCliente = document.querySelector('#nomeCliente').value
+emailCliente = document.querySelector('#emailCliente').value
+telefoneClient = document.querySelector('#telefoneClient').value
+origemCliente = document.querySelector('#origemCliente').value
+situacaoCliente = document.querySelector('#situacaoCliente').value
+observacao = document.querySelector('#observacao').value
+user = firebase.auth().currentUser.displayName
+alert(user)
+
 formButton.onclick = ev => {
-    contato.nome = toString(document.querySelector('#nomeCliente'))
-    
-    db.collection("users").add({
-        first: firebase.auth().currentUser.displayName
+    db.collection('users').add({
+        usuario: user,
+        tipo: tipoPessoa,
+        nome: nomeCliente,
+        email: emailCliente,
+        telefone: telefoneClient,
+        origem: origemCliente,
+        situacao: situacaoCliente,
+        observacaoNegociacao: observacao
     })
     ev.preventDefault()
 }
