@@ -50,47 +50,39 @@ form input {
 form button {
     position: relative;
     display: block;
-    width: 100%;
-    height: 2em;
-    font-size: 2em;
-    line-height: 2em;
-    padding: 0;
-    margin: 0 auto;
-    font-weight: 600;
-    border-radius: 10px;
-    border: 3px solid var(--third-color);
     background-color: transparent;
     color: white;
+    border: 1px solid var(--third-color);
+    border-radius: 10px;
+    font-size: 2em;
+    padding: 0 1.5em;
+    margin: 0 auto;
+    outline: none;
 }
 
 form button:hover {
     position: relative;
     display: block;
-    width: 100%;
-    height: 2em;
-    font-size: 2em;
-    line-height: 2em;
-    padding: 0;
-    margin: 0 auto;
-    font-weight: 600;
-    border-radius: 10px;
-    border: 3px solid white;
     background-color: transparent;
     color: var(--third-color);
+    border: 1px solid var(--third-color);
+    border-radius: 10px;
+    font-size: 2em;
+    padding: 0 1.5em;
+    margin: 0 auto;
+    outline: none;
 }
 
 form button:active {
     position: relative;
     display: block;
-    width: 100%;
-    height: 2em;
-    font-size: 2em;
-    line-height: 2em;
-    padding: 0;
-    margin: 0 auto;
-    font-weight: 600;
+    background-color: transparent;
+    color: var(--third-color);
+    border: 3px solid white;
+    border-bottom: 5px solid white;
     border-radius: 10px;
-    border: 3px solid black;
-    background-color: white;
-    color: black;
+    font-size: 2em;
+    padding: 0 1.5em;
+    margin: 0 auto;
+    outline: none;
 }
