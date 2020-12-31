@@ -1,3 +1,10 @@
+var tipoPessoa
+var nomeCliente;
+var emailCliente;
+var telefoneClient;
+var origemCliente;
+var situacaoCliente;
+var observacao;
 const footerDivs = document.querySelectorAll('.footerDivs')
 const formButton = document.querySelector('#formButton')
 
@@ -40,17 +47,23 @@ window.addEventListener('load', function () {
     }
 })
 
-var tipoPessoa = document.getElementById('tipoPessoa').value
-var nomeCliente = document.getElementById('nomeCliente').value
-var emailCliente = document.getElementById('emailCliente').value
-var telefoneClient = document.getElementById('telefoneClient').value
-var origemCliente = document.getElementById('origemCliente').value
-var situacaoCliente = document.getElementById('situacaoCliente').value
-var observacao = document.getElementById('observacao').value
+getFormData = () => {
+    tipoPessoa = document.getElementById('tipoPessoa').value
+    nomeCliente = document.getElementById('nomeCliente').value
+    emailCliente = document.getElementById('emailCliente').value
+    telefoneClient = document.getElementById('telefoneClient').value
+    origemCliente = document.getElementById('origemCliente').value
+    situacaoCliente = document.getElementById('situacaoCliente').value
+    observacao = document.getElementById('observacao').value
+}
 
 formButton.onclick = ev => {
+    
+    getFormData();
+
     db.collection('contacts').add({
         usuario: loggedInUser.uid,
+        nome: nomeCliente,
         tipo: tipoPessoa,
         nome: nomeCliente,
         email: emailCliente,
