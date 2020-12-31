@@ -1,18 +1,13 @@
-h1 {
-    font-size: 3.14em;
-}
 .page-title {
-    position: relative;
-    display: block;
-    margin: auto;
     color: white;
     background-color:rgba(0,0,0,0.1);
-    width: 10em;
-    height: 2.5em;
-    line-height: 2.5em;
-    padding-left: 3em;
+    padding: .1em 1.5em;
+    position: relative;
+    margin: 0 auto;
     top: 10vh;
-    border-radius: 25px;
+    max-width: 7em;    
+    font-size: 2em;    
+    border-radius: 10px;
 }
 
 p {
@@ -22,12 +17,6 @@ p {
 .line-heigh-20vh {
     line-height: 15vh;
     padding-left: 5vw;
-}
-
-header h1 {
-    font-size: 2em;
-    color: var(--secondary-color);
-    display: inline;
 }
 
 header h1 span{

@@ -37,7 +37,7 @@ footer {
     padding: 0 3vh;
 }
 
-app {
+app, login {
     position: absolute;
     display: block;
     height: 100vh;
@@ -45,8 +45,12 @@ app {
     border: 1px solid var(--third-color);
     background-color: var(--secondary-color);
 }
+app {
+    display: none;
+}
 
 #loadingDiv {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;

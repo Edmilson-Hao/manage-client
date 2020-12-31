@@ -14,6 +14,16 @@
 </head>
 <body>
 
+    <login>
+        <h1 class='page-title'>Entrar</h1>
+        <img class='icon-logo' src="./src/assets/icon-logo.png" alt="Logo of the icon">
+    
+        <button type="button" id='loginButton' >Login com o Google</button>
+        <div id='loadingDiv'>
+            <img src="./src/assets/loading-icon.png" alt="Loading Icon">
+        </div>
+    </login>
+
 <app>
     <button onclick="firebase.auth().signOut()">Sair</button>
 
@@ -126,6 +136,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
 
 <script src="./src/scripts/firebase.js"></script>
+<script src="./src/scripts/login.js"></script>
 <script src="./index.js"></script>
 </body>
 </html>

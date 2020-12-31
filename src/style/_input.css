@@ -7,6 +7,9 @@
     position: relative;
     margin: auto;
     top: 35vh;
+    font-size: 1em;
+    padding: .5em 1.5em;
+    border-radius: 10px;
 }
 
 .radioButtons {
