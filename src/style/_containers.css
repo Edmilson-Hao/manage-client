@@ -39,14 +39,11 @@ footer {
 
 app, login {
     position: absolute;
-    display: block;
+    display: none;
     height: 100vh;
     margin: auto;
     border: 1px solid var(--third-color);
     background-color: var(--secondary-color);
-}
-app {
-    display: none;
 }
 
 #loadingDiv {

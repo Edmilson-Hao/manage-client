@@ -25,16 +25,23 @@
     </login>
 
 <app>
-    <button onclick="firebase.auth().signOut()">Sair</button>
+    <button id="signOutButtons">Sair</button>
 
 
-    <!-- footer
-    --------------------------------------------------------------------------------------------------------->
+    
     <footer>
         <input class='radioButtons' type="radio" name="footer-menu" id="addContactRadio">
         <label class='radioButtonLabel' for="addContactRadio">
             <img src="./src/assets/add.png" alt="add new contact">
-            
+    
+<!-- 
+    add contacts
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+-->
             <div class='footerDivs' id='addContactDiv'>
                 <form>
                     <Label class="labelAddClient" for="tipoPessoa">Tipo de Pessoa:</Label>

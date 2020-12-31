@@ -1,6 +1,5 @@
 const footerDivs = document.querySelectorAll('.footerDivs')
 const formButton = document.querySelector('#formButton')
-var loggedInUser
 
 window.addEventListener('load', function () {
     /*Responsividade da página
@@ -41,22 +40,17 @@ window.addEventListener('load', function () {
     }
 })
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if (!user && document.title !== 'Entrar') window.location.href = './login.html';
-    loggedInUser = firestore.auth().currentUser
-})
-
-tipoPessoa = document.getElementById('tipoPessoa').value
-nomeCliente = document.getElementById('nomeCliente').value
-emailCliente = document.getElementById('emailCliente').value
-telefoneClient = document.getElementById('telefoneClient').value
-origemCliente = document.getElementById('origemCliente').value
-situacaoCliente = document.getElementById('situacaoCliente').value
-observacao = document.getElementById('observacao').value
+var tipoPessoa = document.getElementById('tipoPessoa').value
+var nomeCliente = document.getElementById('nomeCliente').value
+var emailCliente = document.getElementById('emailCliente').value
+var telefoneClient = document.getElementById('telefoneClient').value
+var origemCliente = document.getElementById('origemCliente').value
+var situacaoCliente = document.getElementById('situacaoCliente').value
+var observacao = document.getElementById('observacao').value
 
 formButton.onclick = ev => {
     db.collection('contacts').add({
-        usuario: user,
+        usuario: loggedInUser.uid,
         tipo: tipoPessoa,
         nome: nomeCliente,
         email: emailCliente,
