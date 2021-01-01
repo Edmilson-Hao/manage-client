@@ -35,3 +35,21 @@ formButton.onclick = ev => {
     })
     ev.preventDefault()
 }
+
+const searchBar = document.querySelector('#searchBar')
+const searchButton = document.querySelector('#searchButton')
+
+retrieveDataFromFIrebase = () => {
+alert('Search')
+}
+
+searchBar.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      // code for enter
+      retrieveDataFromFIrebase()
+    }
+})
+
+searchButton.addEventListener('click', function () {
+    retrieveDataFromFIrebase()
+})
