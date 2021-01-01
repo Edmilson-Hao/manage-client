@@ -1,10 +1,10 @@
 var tipoPessoa
-var nomeCliente;
-var emailCliente;
-var telefoneClient;
-var origemCliente;
-var situacaoCliente;
-var observacao;
+var nomeCliente
+var emailCliente
+var telefoneClient
+var origemCliente
+var situacaoCliente
+var observacao
 const footerDivs = document.querySelectorAll('.footerDivs')
 const formButton = document.querySelector('#formButton')
 
@@ -33,6 +33,7 @@ formButton.onclick = ev => {
         situacao: situacaoCliente,
         observacaoNegociacao: observacao
     })
+
     ev.preventDefault()
 }
 

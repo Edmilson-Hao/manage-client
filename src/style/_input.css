@@ -25,14 +25,14 @@ form .selectAddClient, input{
     position: relative;
     display: block;
     margin: 0 0 3em 0;
-    padding: 0;
+    padding: .5em 1.5em;
     width: 100%;
-    height: 1.5em;
     font-size: 1em;
     line-height: 1em;
     background-color: transparent;
-    border: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border: 1px solid var(--third-color);
+    outline: none;
 }
 
 form input {
@@ -45,7 +45,7 @@ form input {
 }
 
 .selectAddClient {
-    color: white;
+    color: var(--third-color);
 }
 
 form button {

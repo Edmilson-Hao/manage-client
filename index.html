@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./index.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -43,31 +44,25 @@
 -->
             <div class='footerDivs' id='addContactDiv'>
                 <form>
-                    <Label class="labelAddClient" for="tipoPessoa">Tipo de Pessoa:</Label>
                     <select class="selectAddClient" name="tipoPessoa" id="tipoPessoa">
                         <option value="">Selecione</option>
                         <option value="pessoaFisica">Pessoa Física</option>
                         <option value="pessoaJuridica">Pessoa Jurídica</option>
                     </select>
 
-                    <Label class="labelAddClient" for="nomeCliente">Nome:</Label>
                     <input type="text" id='nomeCliente' name='nomeCliente' placeholder='Nome'>
 
-                    <label class="labelAddClient" for="emailCliente">E-mail:</label>
                     <input type="email" id='emailCliente' name='emailCliente' placeholder='E-mail'>
-                    
-                    <label class="labelAddClient" for="telefoneClient">Telefone</label>
+
                     <input type="tel" id='telefoneClient' name='telefoneClient' placeholder='Formato -> DDD900000000'>
-                    
-                    <label class="labelAddClient" for="origemCliente">Origem do Cliente: </label>
+
                     <select class="selectAddClient" name="origemCliente" id="origemCliente">
                         <option value="">Selecione</option>
                         <option value="sistemThapymar">Sistema Thapymar</option>
                         <option value="Wally">Wally</option>
                         <option value="captacaoPropria">Captação Própria</option>
                     </select>
-                    
-                    <label class="labelAddClient" for="andamentoCliente">Andamento: </label>
+
                     <select class="selectAddClient" name="origemCliente" id="situacaoCliente">
                         <option value="">Selecione</option>
                         <option value="clienteNovo">Cliente Novo</option>
@@ -77,9 +72,8 @@
                         <option value="vendaConcretizada">Venda Concretizada</option>
                         <option value="vendaPerdida">Venda Perdida</option>
                     </select>
-                    
-                    <label class="labelAddClient" for="observacao">Observação</label>
-                    <input type="text" name="observacao" id="observacao">
+
+                    <input type="text" name="observacao" id="observacao" placeholder='Comentários'>
                     
                     <button id='formButton'>Salvar</button>
                 </form>
@@ -102,11 +96,18 @@
                 <laberl for="searchBar" id='searchIcon'>
                     <i class="fa fa-search" id='searchButton' role="button"></i>
                 </laberl>
-                <input type="text" name="searchBar" id="searchBar">
+                <input type="text" name="searchBar" id="searchBar" placeholder='Nome:'>
 
             </div>
         </label>
-
+<!-- 
+    home
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+-->
         <input class='radioButtons' type="radio" name="footer-menu" id="appHomeRadio" checked="checked" >
         <label class='radioButtonLabel' for="appHomeRadio">
             <img src="./src/assets/home.png" alt="add new contact">

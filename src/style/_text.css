@@ -38,7 +38,7 @@ main p{
     line-height: 1em;
     margin: .5em auto;
     padding: .25em 0;
-    color: white;
+    color: var(--third-color);
 }
 
 label i {
