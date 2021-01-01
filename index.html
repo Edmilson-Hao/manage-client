@@ -10,6 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -85,15 +86,25 @@
             </div>
 
         </label>
-
+<!-- 
+    searchcontact
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+-->
         <input class='radioButtons' type="radio" name="footer-menu" id="searchContactRadio">
         <label class='radioButtonLabel' for="searchContactRadio">
             <img src="./src/assets/search.png" alt="add new contact">
             
             <div class='footerDivs' id='searchContactDiv'>
-                search contact
-            </div>
+                <laberl for="searchBar" id='searchIcon'>
+                    <i class="fa fa-search" role="button"></i>
+                </laberl>
+                <input type="text" name="searchBar" id="searchBar">
 
+            </div>
         </label>
 
         <input class='radioButtons' type="radio" name="footer-menu" id="appHomeRadio" checked="checked" >
@@ -142,6 +153,7 @@
 
 <script src="./src/scripts/firebase.js"></script>
 <script src="./src/scripts/login.js"></script>
+<script src="./src/scripts/style.js"></script>
 <script src="./index.js"></script>
 </body>
 </html>

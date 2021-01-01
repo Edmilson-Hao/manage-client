@@ -75,3 +75,9 @@ input:checked + label div {
 form {
     padding: 1em;
 }
+
+#searchContactDiv {
+    margin: 0 auto;
+    padding: 1.5em;
+    align-content: center;
+}

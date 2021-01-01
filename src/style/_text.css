@@ -40,3 +40,16 @@ main p{
     padding: .25em 0;
     color: white;
 }
+
+label i {
+    color: var(--third-color);
+    float: right;
+    position: relative;
+    right: 1em;
+    top: 1.5em;
+    border-left: 1px solid var(--third-color);
+    padding-left: .5em;
+    cursor: pointer;
+    z-index: 1;
+    display: none;
+}
