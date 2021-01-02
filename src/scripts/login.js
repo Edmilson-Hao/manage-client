@@ -7,6 +7,11 @@ firebase.auth().onAuthStateChanged(function(user) {
       document.querySelector('login').style.display = 'none'
       document.querySelector('app').style.display = 'block'
       loggedInUser = firebase.auth().currentUser
+
+      db.collection('users').doc(loggedInUser.uid).set({
+        name: loggedInUser.displayName
+      })
+
     } else {
       document.querySelector('login').style.display = 'block'
       document.querySelector('app').style.display = 'none'

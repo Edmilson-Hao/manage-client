@@ -7,6 +7,9 @@ var situacaoCliente
 var observacao
 const footerDivs = document.querySelectorAll('.footerDivs')
 const formButton = document.querySelector('#formButton')
+const searchBar = document.querySelector('#searchBar')
+const searchButton = document.querySelector('#searchButton')
+contatos = []
 
 getFormData = () => {
     tipoPessoa = document.getElementById('tipoPessoa').value
@@ -22,7 +25,7 @@ formButton.onclick = ev => {
     
     getFormData();
 
-    db.collection('contacts').add({
+    db.collection('users').doc(loggedInUser.uid).collection('contacts').add({
         usuario: loggedInUser.uid,
         nome: nomeCliente,
         tipo: tipoPessoa,
@@ -33,20 +36,54 @@ formButton.onclick = ev => {
         situacao: situacaoCliente,
         observacaoNegociacao: observacao
     })
+    .then(function(docRef) {
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    })
+    .catch(function(error) {
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    })
 
     ev.preventDefault()
 }
 
-const searchBar = document.querySelector('#searchBar')
-const searchButton = document.querySelector('#searchButton')
-
 retrieveDataFromFIrebase = () => {
-alert('Search')
+    db.collection('users').doc(loggedInUser.uid).collection('contacts').get()
+    .then((documentos) => {
+        documentos.docs.forEach((d) => {
+            contatos.push(d.data())
+        })
+    })
+
+    printToPage()
+}
+
+printToPage = () => {
+    let pesquisaNome = document.querySelector('#searchBar').value
+
+    for (i in contatos) {
+        let li = document.createElement('li')
+
+        if (contatos[i].nome.search(pesquisaNome)){
+            li.innerHTML = contatos[i].nome
+            document.querySelector('#listOfContacts').appendChild(li)
+        }
+    }
 }
 
 searchBar.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
-      // code for enter
       retrieveDataFromFIrebase()
     }
 })
@@ -54,3 +91,15 @@ searchBar.addEventListener('keypress', function (e) {
 searchButton.addEventListener('click', function () {
     retrieveDataFromFIrebase()
 })
+
+/*
+db.collection('users').doc(loggedInUser.uid).collection('contacts').get()
+.then((documentos) => {
+    documentos.docs.forEach((d) => {
+        contatos.push(d.data())
+    })
+})
+
+str.search("W3Schools")
+
+*/
