@@ -56,8 +56,10 @@ label i {
 
 ul li {
     list-style: none;
-    border: 1px solid white;
+    background-color: white;
     cursor: pointer;
+    padding: .5em 1.5em;
+    text-align: center;
 }
 
 ul li:not(:last-child) {

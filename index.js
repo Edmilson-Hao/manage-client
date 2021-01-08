@@ -5,7 +5,6 @@ let telefoneClient
 let origemCliente
 let situacaoCliente
 let observacao
-let searchString
 const footerDivs = document.querySelectorAll('.footerDivs')
 const formButton = document.querySelector('#formButton')
 const searchBar = document.querySelector('#searchBar')
@@ -66,33 +65,32 @@ retrieveDataFromFirebase = () => {
         documentos.docs.forEach((d) => {
             contatos.push(d.data())
         })
-        for(i in contatos) {
-            const li = document.createElement("li")
-            li.innerHTML = `
-                Nome: ${contatos[i].nome}
-                Telefone: ${contatos[i].telefoneClient}
-            `
-            ul.appendChild(li)
-        }
+        
+        displayContacts(contatos,searchBar.value)
     })
 
 }
 
 searchBar.addEventListener('keyup',  e => {
-    searchString = e.target.value
-    displayContacts(contatos)
+    const searchString = e.target.value
+    displayContacts(contatos,searchString)
 })
 
-const displayContacts = (c) => {
+const displayContacts = (c,s) => {
     ul.innerHTML = ''
     for (i in c) {
-        if(c[i].nome.toLowerCase().includes(searchString.toLowerCase())){
-            const li = document.createElement("li")
-            li.innerHTML = `
-                Nome: ${c[i].nome}
-                Telefone: ${c[i].telefoneClient}
+        if(c[i].nome.toLowerCase().includes(s.toLowerCase())){
+
+            ul.innerHTML += `
+                <li class="contacts">
+                    <h2>${c[i].nome}</h2>
+                    <p>
+                        <span>${c[i].telefoneClient}</span>
+                         - 
+                        <span>${c[i].emailCliente}</span>
+                    </p>
+                </>
             `
-            ul.appendChild(li)
         }
     }
 }
