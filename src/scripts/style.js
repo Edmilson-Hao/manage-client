@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
         loginContainer.style.height = '100vh'
 
         for (const i in footerDivs) {
-            footerDivs[i].style.left = `${0+incremento}vh`
+            footerDivs[i].style.left = `${-3+incremento}vh`
             incremento -= 15
         }
 

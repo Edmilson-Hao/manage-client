@@ -53,3 +53,13 @@ label i {
     z-index: 1;
     display: none;
 }
+
+ul li {
+    list-style: none;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+ul li:not(:last-child) {
+    margin-bottom: .5em;
+}

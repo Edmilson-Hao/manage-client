@@ -12,6 +12,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         name: loggedInUser.displayName
       })
 
+      retrieveDataFromFirebase()
+
     } else {
       document.querySelector('login').style.display = 'block'
       document.querySelector('app').style.display = 'none'

@@ -59,8 +59,7 @@ footer div {
     position: relative;
     display: none;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 69vh;
+    width: 75vh;
     height: 70vh;
     top: -85vh;
     border-radius: 15px;
