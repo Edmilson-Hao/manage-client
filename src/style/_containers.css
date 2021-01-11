@@ -75,7 +75,7 @@ form {
     padding: 1em;
 }
 
-#searchContactDiv {
+#searchContactDiv, #listContactDiv {
     margin: 0 auto;
     padding: 1.5em;
     align-content: center;

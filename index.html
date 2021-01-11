@@ -65,14 +65,14 @@
                     <input type="tel" id='telefoneClient' name='telefoneClient' placeholder='Formato -> DDD900000000'>
 
                     <select class="selectAddClient" name="origemCliente" id="origemCliente">
-                        <option value="">Selecione</option>
+                        <option value="">Selecione origem da captação</option>
                         <option value="sistemThapymar">Sistema Thapymar</option>
                         <option value="Wally">Wally</option>
                         <option value="captacaoPropria">Captação Própria</option>
                     </select>
 
                     <select class="selectAddClient" name="origemCliente" id="situacaoCliente">
-                        <option value="">Selecione</option>
+                        <option value="">Selecione a etapa da negociação</option>
                         <option value="clienteNovo">Cliente Novo</option>
                         <option value="emNegociacao">Em Negociação</option>
                         <option value="clientePerdido">Cliente Perdido</option>
@@ -106,9 +106,7 @@
                 </laberl>
                 <input type="text" name="searchBar" id="searchBar" placeholder='Nome:'>
 
-                <ul id='listOfContacts'>
-                    
-                </ul>
+                <ul id='listOfContacts'></ul>
             </div>
         </label>
 <!-- 
@@ -128,13 +126,30 @@
             </div>
 
         </label>
-        
+<!-- 
+    lists
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
+-->
         <input class='radioButtons' type="radio" name="footer-menu" id="listContactRadio">
         <label class='radioButtonLabel' for="listContactRadio">
             <img src="./src/assets/lists.png" alt="add new contact">
             
             <div class='footerDivs' id='listContactDiv'>
-                list contact
+                <select class="selectAddClient" name="origemCliente" id="selectList">
+                    <option value="">Selecione Uma Lista Para Gerar</option>
+                    <option value="clienteNovo">Cliente Novo</option>
+                    <option value="emNegociacao">Em Negociação</option>
+                    <option value="clientePerdido">Cliente Perdido</option>
+                    <option value="semContato">Sem Contato</option>
+                    <option value="vendaConcretizada">Venda Concretizada</option>
+                    <option value="vendaPerdida">Venda Perdida</option>
+                </select>
+
+                <ul id="ulResultadoList"></ul>
             </div>
 
         </label>

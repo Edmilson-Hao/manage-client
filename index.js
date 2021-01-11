@@ -9,8 +9,8 @@ const footerDivs = document.querySelectorAll('.footerDivs')
 const formButton = document.querySelector('#formButton')
 const searchBar = document.querySelector('#searchBar')
 const searchButton = document.querySelector('#searchButton')
-const ul= document.querySelector('#listOfContacts')
-contatos = []
+const ul = document.querySelector('#listOfContacts')
+var contatos = []
 filteredContacts = []
 
 getFormData = () => {
@@ -37,60 +37,90 @@ formButton.onclick = ev => {
         situacao: situacaoCliente,
         observacaoNegociacao: observacao
     })
-    .then(function(docRef) {
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    })
-    .catch(function(error) {
-        Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: 'Your work has not been saved',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    })
+    .then(successSignal)
+    .catch(filedSignal)
+
+    window.location.reload()
 
     ev.preventDefault()
 }
 
-retrieveDataFromFirebase = () => {
+const successSignal = () => {
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+    })
+}
+
+const filedSignal = () => {
+    Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Your work has not been saved',
+        showConfirmButton: false,
+        timer: 1500
+    })
+}
+
+const retrieveDataFromFirebase = () => {
     db.collection('users').doc(loggedInUser.uid).collection('contacts').get()
     .then((documentos) => {
         documentos.docs.forEach((d) => {
             contatos.push(d.data())
         })
         
-        displayContacts(contatos,searchBar.value)
+        generateConstactLists(ul,contatos,searchBar.value)
     })
 
 }
 
 searchBar.addEventListener('keyup',  e => {
+    console.log(e.target.value)
     const searchString = e.target.value
-    displayContacts(contatos,searchString)
+    generateConstactLists(ul,contatos,searchString)
 })
 
-const displayContacts = (c,s) => {
-    ul.innerHTML = ''
-    for (i in c) {
-        if(c[i].nome.toLowerCase().includes(s.toLowerCase())){
+const selectList = document.querySelector("#selectList")
+const divListGenerated = document.querySelector('#divListGenerated')
 
-            ul.innerHTML += `
-                <li class="contacts">
-                    <h2>${c[i].nome}</h2>
-                    <p>
-                        <span>${c[i].telefoneClient}</span>
-                         - 
-                        <span>${c[i].emailCliente}</span>
-                    </p>
-                </>
-            `
-        }
+selectList.addEventListener('click', function () {
+    const ulResultadoList = document.querySelector('#ulResultadoList')
+    
+    switch (selectList.value) {
+        case "":
+            ulResultadoList.innerHTML = ''
+        break;
+        case "clienteNovo":
+            generateConstactLists(ulResultadoList,contatos,selectList.value)
+        break;
+        case "emNegociacao":
+            generateConstactLists(ulResultadoList,contatos,selectList.value)
+        break;
+        case "clientePerdido":
+            generateConstactLists(ulResultadoList,contatos,selectList.value)
+        break;
+        case "semContato":
+            generateConstactLists(ulResultadoList,contatos,selectList.value)
+        break;
+        case "vendaConcretizada":
+            generateConstactLists(ulResultadoList,contatos,selectList.value)
+        break;
+        case "vendaPerdida":
+            generateConstactLists(ulResultadoList,contatos,selectList.value)
+        break;
     }
+})
+
+const generateConstactLists = (el,c,l) => {
+    const htmlString = c.map(c => {
+        if (c.nome.toLowerCase().includes(l.toLowerCase()))   return `
+                    <li>
+                        <h2>${c.nome}</h2>
+                    </li>
+                `
+    }).join('')
+    el.innerHTML = htmlString
 }

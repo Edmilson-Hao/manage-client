@@ -54,14 +54,20 @@ label i {
     display: none;
 }
 
-ul li {
+#listOfContacts li {
     list-style: none;
-    background-color: white;
     cursor: pointer;
     padding: .5em 1.5em;
     text-align: center;
+    background-color: white;
+    margin-bottom: .5em;
 }
 
-ul li:not(:last-child) {
+#ulResultadoList li {
+    list-style: none;
+    cursor: pointer;
+    padding: .5em 1.5em;
+    text-align: center;
+    background-color: white;
     margin-bottom: .5em;
 }
