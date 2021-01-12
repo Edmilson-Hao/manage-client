@@ -72,7 +72,8 @@ const retrieveDataFromFirebase = () => {
             contatos.push(d.data())
         })
         
-        generateConstactLists(ul,contatos,searchBar.value)
+        generateNameList(ul,contatos,searchBar.value)
+        generateNameList(ulResultadoList,contatos,searchBar.value)
     })
 
 }
@@ -80,41 +81,44 @@ const retrieveDataFromFirebase = () => {
 searchBar.addEventListener('keyup',  e => {
     console.log(e.target.value)
     const searchString = e.target.value
-    generateConstactLists(ul,contatos,searchString)
+    generateNameList(ul,contatos,searchString)
 })
 
 const selectList = document.querySelector("#selectList")
 const divListGenerated = document.querySelector('#divListGenerated')
+const ulResultadoList = document.querySelector('#ulResultadoList')
 
 selectList.addEventListener('click', function () {
-    const ulResultadoList = document.querySelector('#ulResultadoList')
     
     switch (selectList.value) {
         case "":
             ulResultadoList.innerHTML = ''
         break;
+        case "todos":
+            generateNameList(ulResultadoList,contatos,searchBar.value)
+        break;
         case "clienteNovo":
-            generateConstactLists(ulResultadoList,contatos,selectList.value)
+            generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
         case "emNegociacao":
-            generateConstactLists(ulResultadoList,contatos,selectList.value)
+            generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
         case "clientePerdido":
-            generateConstactLists(ulResultadoList,contatos,selectList.value)
+            generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
         case "semContato":
-            generateConstactLists(ulResultadoList,contatos,selectList.value)
+            generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
         case "vendaConcretizada":
-            generateConstactLists(ulResultadoList,contatos,selectList.value)
+            generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
         case "vendaPerdida":
-            generateConstactLists(ulResultadoList,contatos,selectList.value)
+            generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
     }
 })
 
-const generateConstactLists = (el,c,l) => {
+const generateNameList = (el,c,l,i) => {
     const htmlString = c.map(c => {
         if (c.nome.toLowerCase().includes(l.toLowerCase()))   return `
                     <li>
@@ -122,5 +126,19 @@ const generateConstactLists = (el,c,l) => {
                     </li>
                 `
     }).join('')
+    
+    el.innerHTML = htmlString
+}
+
+
+const generateSituationList = (el,c,l,i) => {
+    const htmlString = c.map(c => {
+        if (c.situacao.toLowerCase().includes(l.toLowerCase()))   return `
+                    <li>
+                        <h2>${c.nome}</h2>
+                    </li>
+                `
+    }).join('')
+    
     el.innerHTML = htmlString
 }

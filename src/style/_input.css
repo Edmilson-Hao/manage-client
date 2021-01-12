@@ -21,7 +21,7 @@
     line-height: 12vh;
 }
 
-form .selectAddClient, input{
+.selectAddClient, input{
     position: relative;
     display: block;
     margin: 0 0 3em 0;
