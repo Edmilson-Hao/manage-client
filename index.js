@@ -78,18 +78,19 @@ const retrieveDataFromFirebase = () => {
 
 }
 
-searchBar.addEventListener('keyup',  e => {
+const getSearchString = e => {
     console.log(e.target.value)
     const searchString = e.target.value
     generateNameList(ul,contatos,searchString)
-})
+}
+
+searchBar.addEventListener('keyup',  getSearchString)
 
 const selectList = document.querySelector("#selectList")
 const divListGenerated = document.querySelector('#divListGenerated')
 const ulResultadoList = document.querySelector('#ulResultadoList')
 
-selectList.addEventListener('click', function () {
-    
+const changeList = () => {
     switch (selectList.value) {
         case "":
             ulResultadoList.innerHTML = ''
@@ -116,13 +117,14 @@ selectList.addEventListener('click', function () {
             generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
     }
-})
+}
+selectList.addEventListener('click', changeList)
 
 const generateNameList = (el,c,l,i) => {
     const htmlString = c.map(c => {
         if (c.nome.toLowerCase().includes(l.toLowerCase()))   return `
-                    <li>
-                        <h2>${c.nome}</h2>
+                    <li class='cont'>
+                        <h2 class='contactNameHeader'>${c.nome}</h2>
                     </li>
                 `
     }).join('')
@@ -134,11 +136,40 @@ const generateNameList = (el,c,l,i) => {
 const generateSituationList = (el,c,l,i) => {
     const htmlString = c.map(c => {
         if (c.situacao.toLowerCase().includes(l.toLowerCase()))   return `
-                    <li>
-                        <h2>${c.nome}</h2>
+                    <li class='cont'>
+                        <h2 class='contactNameHeader'>${c.nome}</h2>
                     </li>
                 `
     }).join('')
     
     el.innerHTML = htmlString
 }
+
+//let li = Array.from(document.getElementsByClassName('cont'))
+
+let li = document.querySelector("#listOfContacts")
+
+li.addEventListener('click', e => {
+    console.log(e.target.innerText)
+    const contactName = e.target.innerText
+    const popUpContact = document.createElement('div')
+    popUpContact.classList.add('popUp')
+
+    popUpContact.innerHTML = `
+        Alow ${contactName}
+    `
+})
+
+
+
+
+
+
+
+
+
+/*
+i.forEach( contato => {
+    console.log(contato.children[0].innerText)
+})
+*/

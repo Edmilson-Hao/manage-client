@@ -19,8 +19,8 @@
 }
 
 footer img {
-    width: 9vh;
-    height: 9vh;
+    width: 5vh;
+    height: 5vh;
     border-radius: 50%;
     padding: 0.5em;
 }
@@ -36,8 +36,9 @@ footer label {
 
 input:checked + label:before {
     content: '';
-    border-bottom: 2px solid rgba(247, 127, 60, 0.5);
+    border-bottom: 2px solid rgba(247, 127, 60, 0.7);
     position: relative;
     display: block;
-    top: 11vh;
+    top: 7vh;
+    width: 5vh;
 }

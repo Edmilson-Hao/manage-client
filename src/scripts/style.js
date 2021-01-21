@@ -26,13 +26,18 @@ window.addEventListener('load', function () {
         loginContainer.style.width = '100vw'
         loginContainer.style.height = '100vh'
 
-        for (const i in footerDivs) {
-            footerDivs[i].style.width = '45vh'
-            footerDivs[i].style.height = '70vh'
-            footerDivs[i].style.left = `${0+incremento}vh`
-            incremento -= 9
-        }
-
-        document.querySelector('app').style.border = 'none'
+        footerDivs.forEach( div => {
+            div.style.width = '98vw'
+            div.style.height = '70vh'
+            div.style.left = `${-05+incremento}vw`
+            incremento -=18
+        })
+        /*
+        footerDivs[0].style.left = `${-05+incremento}vw` //18
+        footerDivs[1].style.left = `${-23+incremento}vw` //18
+        footerDivs[2].style.left = `${-41+incremento}vw` //18
+        footerDivs[3].style.left = `${-59+incremento}vw` //18.5
+        footerDivs[4].style.left = `${-77.5+incremento}vw`
+        */
     }
 })
