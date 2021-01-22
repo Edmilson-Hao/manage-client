@@ -53,8 +53,8 @@
                 <form>
                     <select class="selectAddClient" name="tipoPessoa" id="tipoPessoa">
                         <option value="naoInformado">Selecione</option>
-                        <option value="pessoaFisica">Pessoa Física</option>
-                        <option value="pessoaJuridica">Pessoa Jurídica</option>
+                        <option value="Pessoa Física">Pessoa Física</option>
+                        <option value="Pessoa Jurídica">Pessoa Jurídica</option>
                     </select>
 
                     <input type="text" id='nomeCliente' name='nomeCliente' placeholder='Nome'>
@@ -65,19 +65,19 @@
 
                     <select class="selectAddClient" name="origemCliente" id="origemCliente">
                         <option value="">Selecione origem da captação</option>
-                        <option value="sistemThapymar">Sistema Thapymar</option>
+                        <option value="Sistema Thapymar">Sistema Thapymar</option>
                         <option value="Wally">Wally</option>
-                        <option value="captacaoPropria">Captação Própria</option>
+                        <option value="Captação Própria">Captação Própria</option>
                     </select>
 
                     <select class="selectAddClient" name="origemCliente" id="situacaoCliente">
                         <option value="">Selecione a etapa da negociação</option>
-                        <option value="clienteNovo">Cliente Novo</option>
-                        <option value="emNegociacao">Em Negociação</option>
-                        <option value="clientePerdido">Cliente Perdido</option>
-                        <option value="semContato">Sem Contato</option>
-                        <option value="vendaConcretizada">Venda Concretizada</option>
-                        <option value="vendaPerdida">Venda Perdida</option>
+                        <option value="Cliente Novo">Cliente Novo</option>
+                        <option value="Em Negociação">Em Negociação</option>
+                        <option value="Cliente Perdido">Cliente Perdido</option>
+                        <option value="Sem Contato">Sem Contato</option>
+                        <option value="Venda Concretizada">Venda Concretizada</option>
+                        <option value="Venda Perdida">Venda Perdida</option>
                     </select>
 
                     <input type="text" name="observacao" id="observacao" placeholder='Comentários'>
@@ -105,7 +105,7 @@
                 </laberl>
                 <input type="text" name="searchBar" id="searchBar" placeholder='Nome:'>
 
-                <ul class='lists' id='listOfContacts'></ul>
+                <ul id='listOfContacts'></ul>
             </div>
         </label>
 <!-- 
@@ -140,16 +140,16 @@
             <div class='footerDivs' id='listContactDiv'>
                 <select class="selectAddClient" name="origemCliente" id="selectList">
                     <option value="">Selecione Uma Lista Para Gerar</option>
-                    <option value="todos">Todos</option>
-                    <option value="clienteNovo">Cliente Novo</option>
-                    <option value="emNegociacao">Em Negociação</option>
-                    <option value="clientePerdido">Cliente Perdido</option>
-                    <option value="semContato">Sem Contato</option>
-                    <option value="vendaConcretizada">Venda Concretizada</option>
-                    <option value="vendaPerdida">Venda Perdida</option>
+                    <option value="Todos">Todos</option>
+                    <option value="Cliente Novo">Cliente Novo</option>
+                    <option value="Em negociação">Em Negociação</option>
+                    <option value="Cliente Perdido">Cliente Perdido</option>
+                    <option value="Sem Contato">Sem Contato</option>
+                    <option value="Venda Concretizada">Venda Concretizada</option>
+                    <option value="Venda Perdida">Venda Perdida</option>
                 </select>
 
-                <ul class='lists' id="ulResultadoList"></ul>
+                <ul id="ulResultadoList"></ul>
             </div>
 
         </label>
@@ -166,6 +166,13 @@
         </label>
         
     </footer>
+
+    <div class='popup-container'>
+        <div class="popup-closer">x</div>
+        <div class="popup"></div>
+    </div>
+
+
 </app>
 
     

@@ -5,6 +5,7 @@ let telefoneClient
 let origemCliente
 let situacaoCliente
 let observacao
+//let li
 const footerDivs = document.querySelectorAll('.footerDivs')
 const formButton = document.querySelector('#formButton')
 const searchBar = document.querySelector('#searchBar')
@@ -65,8 +66,8 @@ const filedSignal = () => {
     })
 }
 
-const retrieveDataFromFirebase = () => {
-    db.collection('users').doc(loggedInUser.uid).collection('contacts').get()
+const retrieveDataFromFirebase = async () => {
+    await db.collection('users').doc(loggedInUser.uid).collection('contacts').get()
     .then((documentos) => {
         documentos.docs.forEach((d) => {
             contatos.push(d.data())
@@ -74,6 +75,7 @@ const retrieveDataFromFirebase = () => {
         
         generateNameList(ul,contatos,searchBar.value)
         generateNameList(ulResultadoList,contatos,searchBar.value)
+        //li = Array.from(document.getElementsByClassName('cont'))
     })
 
 }
@@ -95,25 +97,25 @@ const changeList = () => {
         case "":
             ulResultadoList.innerHTML = ''
         break;
-        case "todos":
+        case "Todos":
             generateNameList(ulResultadoList,contatos,searchBar.value)
         break;
-        case "clienteNovo":
+        case "Cliente Novo":
             generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
-        case "emNegociacao":
+        case "Em negociação":
             generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
-        case "clientePerdido":
+        case "Cliente Perdido":
             generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
-        case "semContato":
+        case "Sem Contato":
             generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
-        case "vendaConcretizada":
+        case "Venda Concretizada":
             generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
-        case "vendaPerdida":
+        case "Venda Perdida":
             generateSituationList(ulResultadoList,contatos,selectList.value)
         break;
     }
@@ -145,31 +147,57 @@ const generateSituationList = (el,c,l,i) => {
     el.innerHTML = htmlString
 }
 
-//let li = Array.from(document.getElementsByClassName('cont'))
+const popupCloser = document.querySelector('.popup-closer')
+const popupContainer = document.querySelector('.popup-container')
+const popup = document.querySelector('.popup')
+const closePopup = () => {
+    popupContainer.style.display = 'none'
+}
 
-let li = document.querySelector("#listOfContacts")
+popupCloser.addEventListener('click', closePopup)
 
-li.addEventListener('click', e => {
-    console.log(e.target.innerText)
-    const contactName = e.target.innerText
-    const popUpContact = document.createElement('div')
-    popUpContact.classList.add('popUp')
+//const ulResultadoList = document.querySelector('#ulResultadoList')
+const listOfContacts = document.querySelector('#listOfContacts')
 
-    popUpContact.innerHTML = `
-        Alow ${contactName}
-    `
+
+
+const showPopup = () => {
+    popupContainer.style.display = 'block'
+}
+
+const populatePopup = name => {
+    const contactName = document.createElement('h2')
+
+    popup.innerHTML = ''
+    
+    const popupContent = contatos.map( contato => {
+        console.log(contato)
+        if (name === contato.nome) return `
+            <h2>${name}</h2>
+            <p>E-mail: ${contato.email}</p>
+            <p>Telefone: ${contato.telefone}</p>
+            <p>Tipo: ${contato.tipo}</p>
+            <p>Situação: ${contato.situacao}</p>
+            <p>Origem: ${contato.origem}</p>
+            <p>Observação: ${contato.observacaoNegociacao}</p>
+        `
+    }).join('')
+
+    popup.innerHTML = popupContent
+}
+
+ulResultadoList.addEventListener('click', event => {
+    let name = event.target.innerText
+    showPopup()
+    populatePopup(name)
+    
+    //console.log(event.target.innerText)
 })
 
-
-
-
-
-
-
-
-
-/*
-i.forEach( contato => {
-    console.log(contato.children[0].innerText)
+listOfContacts.addEventListener('click', event => {
+    let name = event.target.innerText
+    showPopup()
+    populatePopup(name)
+    
+    //console.log(event.target.innerText)
 })
-*/

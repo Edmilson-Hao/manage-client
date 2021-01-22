@@ -15,10 +15,10 @@ window.addEventListener('load', function () {
         loginContainer.style.width = '75vh'
         loginContainer.style.height = '100vh'
 
-        for (const i in footerDivs) {
-            footerDivs[i].style.left = `${-3+incremento}vh`
+        footerDivs.forEach( div => {
+            div.style.left = `${-3+incremento}vh`
             incremento -= 15
-        }
+        })
 
     } else if (screen.width < screen.height) {
         appContainer.style.width = '100vw'

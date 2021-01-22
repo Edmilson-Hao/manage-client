@@ -23,6 +23,7 @@ footer img {
     height: 5vh;
     border-radius: 50%;
     padding: 0.5em;
+    cursor: pointer;
 }
 
 footer label {

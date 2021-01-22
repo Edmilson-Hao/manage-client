@@ -89,3 +89,48 @@ input:checked + label div {
     position: absolute;
     z-index: 10;
 }
+
+.popup-container {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    margin: 0 auto;
+    z-index: 9999999;
+    background-color: rgba(0,0,0,.8)
+}
+
+.popup {
+    position: absolute;
+    display: inline-block;
+    width: 70vh;
+    height: 80vh;
+    top: 10vh;
+    left: 2.5vh;
+    margin: 0 auto;
+    padding: .5rem 1.5rem;
+    background-color: white;
+}
+
+.popup > h2 {
+    text-align: center;
+}
+
+.popup > p {
+    margin: 4rem 1rem;
+    font-size: 1.5rem;
+}
+
+.popup-closer {
+    position: absolute;
+    text-align: center;
+    padding: .2rem 1rem;
+    top: 10vh;
+    right: 5.5em;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 25%;
+    z-index: 99999999;
+    background-color: rgba(0, 0, 0, 0.049);
+}
