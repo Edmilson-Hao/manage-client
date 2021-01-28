@@ -2,7 +2,7 @@
     color: var(--third-color);
     background-color: var(--secondary-color);
     border: 1px solid var(--third-color);
-
+    cursor: pointer;
     display: block;
     position: relative;
     margin: auto;
@@ -98,4 +98,11 @@ form button:active {
     height: 1.5em;
     color: var(--third-color);
     padding: .25em .75em;
+}
+
+.popup > span > a {
+    padding: .5rem 1.5rem;
+    background-color: green;
+    color: white;
+    text-decoration: none;
 }

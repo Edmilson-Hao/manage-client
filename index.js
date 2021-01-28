@@ -166,8 +166,6 @@ const showPopup = () => {
 }
 
 const populatePopup = name => {
-    const contactName = document.createElement('h2')
-
     popup.innerHTML = ''
     
     const popupContent = contatos.map( contato => {
@@ -180,6 +178,8 @@ const populatePopup = name => {
             <p>Situação: ${contato.situacao}</p>
             <p>Origem: ${contato.origem}</p>
             <p>Observação: ${contato.observacaoNegociacao}</p>
+            <span class='popup-btn'><a href="tel:${contato.telefone}">Ligar</a></span>
+            <span class='popup-btn' target=”_blank”><a href="https://api.whatsapp.com/send/?phone=55${contato.telefone}">WhatsApp</a></span>
         `
     }).join('')
 
