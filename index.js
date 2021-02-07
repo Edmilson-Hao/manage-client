@@ -179,7 +179,7 @@ const populatePopup = name => {
             <p>Origem: ${contato.origem}</p>
             <p>Observação: ${contato.observacaoNegociacao}</p>
             <span class='popup-btn'><a href="tel:${contato.telefone}">Ligar</a></span>
-            <span class='popup-btn' target=”_blank”><a href="https://api.whatsapp.com/send/?phone=55${contato.telefone}">WhatsApp</a></span>
+            <span class='popup-btn whatsapp'><a target='_blank' href="https://api.whatsapp.com/send/?phone=55${contato.telefone}">WhatsApp</a></span>
         `
     }).join('')
 

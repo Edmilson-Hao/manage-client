@@ -105,4 +105,10 @@ form button:active {
     background-color: green;
     color: white;
     text-decoration: none;
+    position: relative;
+    top: 30vh;
+}
+
+.whatsapp {
+    float: right;
 }
